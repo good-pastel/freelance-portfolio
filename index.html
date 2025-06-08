@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spesialis Data Entry & Pengetikan Ulang Dokumen</title>
+  <style>
+    :root {
+      --primary: #7bc9fd;
+      --bg-light: #f3f4f6;
+      --text-dark: #1f2937;
+      --text-light: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: var(--text-dark);
+    }
+
+    header, footer {
+      background-color: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .services, .testimonials {
+      background-color: var(--bg-light);
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    .alert {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .alert-success {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .alert-error {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <h1>Spesialis Data Entry & Pengetikan Ulang Dokumen</h1>
+    <p>Halo! Saya Devi, seorang technical writer yang berpengalaman dan terbiasa dengan pekerjaan mengetik cepat serta rapi. Saya menguasai Microsoft Word, Excel, dan PowerPoint, serta terbiasa menyelesaikan tugas pengetikan ulang dan entri data dengan teliti dan tepat waktu.</p>
+  </header>
+
+  <!-- Layanan -->
+  <section class="services">
+    <div class="container">
+      <h2>Saya siap membantu Anda</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Pengetikan Dokumen</h3>
+          <p>Mengetik ulang dokumen fisik ke format digital seperti Word atau PDF dengan rapi dan cepat.</p>
+        </div>
+        <div class="card">
+          <h3>Entri Data</h3>
+          <p>Entri data sederhana maupun kompleks.</p>
+        </div>
+        <div class="card">
+          <h3>Editing dan Format</h3>
+          <p>Kami bantu merapikan hasil ketikan Anda dengan standar akademik atau profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimoni Klien</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <p>"Pelayanan cepat dan hasil ketikannya sangat rapi. Sangat recommended!"</p>
+          <p><strong>– Rina, Mahasiswa</strong></p>
+        </div>
+        <div class="card">
+          <p>"Saya sangat terbantu untuk membuat transkrip wawancara kerja. Profesional!"</p>
+          <p><strong>– Budi, HRD</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="container">
+    <h2>Hubungi Kami</h2>
+
+    <!-- Alert container -->
+    <div id="form-status"></div>
+
+    <form id="contact-form" action="https://formspree.io/f/mldnjryv" method="POST">
+      <input type="text" name="name" placeholder="Nama Anda" required />
+      <input type="email" name="email" placeholder="Email Anda" required />
+      <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Spesialis Data Entry & Pengetikan Ulang Dokumen. Dibuat dengan ❤️ oleh Devi Yolanda</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+      const response = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.innerHTML = '<div class="alert alert-success">Pesan Anda berhasil dikirim!</div>';
+        form.reset();
+      } else {
+        status.innerHTML = '<div class="alert alert-error">Terjadi kesalahan. Silakan coba lagi.</div>';
+      }
+    });
+  </script>
+
+</body>
+</html>
