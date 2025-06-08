@@ -1,6 +1,6 @@
 # Devi Yolanda - Freelance Portfolio
 
-> [[Freelance Portfolio](https://good-pastel.github.io/dy-resume)]
+> [[Freelance Portfolio](https://good-pastel.github.io/freelance-portfolio/)]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
