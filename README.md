@@ -1,6 +1,6 @@
-# Devi Yolanda - Resume Updated
+# Devi Yolanda - Freelance Portfolio
 
-> [[Resume Updated](https://good-pastel.github.io/dy-resume)]
+> [[Freelance Portfolio](https://good-pastel.github.io/dy-resume)]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -23,7 +23,7 @@
 
 ## Description
 
-Updated resume with Tailwind (dark & light mode)
+Freelance Portfolio
 
 
 &copy; Good Pastel. 2025
