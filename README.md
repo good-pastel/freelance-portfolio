@@ -23,7 +23,7 @@
 
 ## Description
 
-Freelance Portfolio
+Freelance Portfolio using Zapier for Form Action
 
 
 &copy; Good Pastel. 2025
