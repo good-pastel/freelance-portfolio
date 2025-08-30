@@ -29,7 +29,7 @@ Freelance Portfolio.
 The form on this portfolio website is connected to <b><a href="https://docs.google.com/spreadsheets/">Google Sheet Apps Script</a></b> to automate the data submission process.
 <br/>
 ```html
-<form id="contact-form" action="https://script.google.com/macros/s/AKfycbwsaTBFtDwTXhpFxWV_GZEmNHVHe-_KcVVPAV05kDYhuhripVGCkwVJuUalgLXShoHd/exec" method="POST">
+<form id="contact-form" action="https://script.google.com/macros/s/YOUR_ID/exec" method="POST">
       <input type="text" name="name" placeholder="Nama Anda" required />
       <input type="email" name="email" placeholder="Email Anda" required />
       <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
