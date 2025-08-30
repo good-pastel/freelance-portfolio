@@ -26,10 +26,10 @@
 Freelance Portfolio.
 <br/>
 <br/>
-The form on this portfolio website is connected to <b><a href="https://zapier.com/">Zapier</a></b> to automate the data submission process.
+The form on this portfolio website is connected to <b><a href="https://docs.google.com/spreadsheets/">Google Sheet Apps Script</a></b> to automate the data submission process.
 <br/>
 ```html
-<form id="contact-form" action="https://hooks.zapier.com/hooks/catch/23307115/uymv6gi/" method="POST">
+<form id="contact-form" action="https://script.google.com/macros/s/AKfycbwsaTBFtDwTXhpFxWV_GZEmNHVHe-_KcVVPAV05kDYhuhripVGCkwVJuUalgLXShoHd/exec" method="POST">
       <input type="text" name="name" placeholder="Nama Anda" required />
       <input type="email" name="email" placeholder="Email Anda" required />
       <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
@@ -39,27 +39,28 @@ The form on this portfolio website is connected to <b><a href="https://zapier.co
 
 ```js
 <script>
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = form.action;
-      const response = await fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  status.textContent = "Mengirim...";
 
-      if (response.ok) {
-        status.innerHTML = '<div class="alert alert-success">Pesan Anda berhasil dikirim!</div>';
-        form.reset();
-      } else {
-        status.innerHTML = '<div class="alert alert-error">Terjadi kesalahan. Silakan coba lagi.</div>';
-      }
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      mode: "no-cors"
     });
-  </script>
+
+    status.textContent = "Pesan berhasil terkirim!";
+    form.reset();
+  } catch (error) {
+    status.textContent = "Terjadi kesalahan. Coba lagi.";
+    console.error(error);
+  }
+});
+</script>
 ```
 
 &copy; Good Pastel. 2025
