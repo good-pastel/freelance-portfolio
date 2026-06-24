@@ -31,49 +31,71 @@ The form on this portfolio website is connected to <b><a href="https://docs.goog
 
 ```html
 <form
-  id="contact-form"
-  action="https://script.google.com/macros/s/YOUR_ID/exec"
-  method="POST"
->
-  <input type="text" name="name" placeholder="Nama Anda" required />
-  <input type="email" name="email" placeholder="Email Anda" required />
-  <textarea
-    name="message"
-    rows="5"
-    placeholder="Pesan Anda"
-    required
-  ></textarea>
-  <button type="submit">Kirim Pesan</button>
-</form>
+        id="contact-form"
+        action="https://script.google.com/YOURID/exec"
+        method="POST"
+      >
+        <input class="inp" name="name" required placeholder="Name" />
+        <input
+          class="inp"
+          type="email"
+          name="email"
+          required
+          placeholder="Email"
+        />...
+      </form>
 ```
 
 ```js
 <script>
-const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
+const f = document.getElementById("contact-form");
+      const s = document.getElementById("form-status");
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  status.textContent = "Mengirim...";
+      f.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-  try {
-    await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      mode: "no-cors"
-    });
+        /* Ambil field */
 
-    status.textContent = "Pesan berhasil terkirim!";
-    form.reset();
-  } catch (error) {
-    status.textContent = "Terjadi kesalahan. Coba lagi.";
-    console.error(error);
-  }
-});
+        const service = document.getElementById("service");
+
+        const project = document.getElementById("project");
+
+        const message = document.getElementById("message");
+
+        /* Gabungkan */
+
+        message.value = `Service : ${service.value}
+
+Project :
+
+${project.value}`;
+
+        s.innerHTML = "📨 Sending your request...";
+
+        try {
+          await fetch(
+            f.action,
+
+            {
+              method: "POST",
+
+              body: new FormData(f),
+
+              mode: "no-cors",
+            },
+          );
+
+          s.innerHTML = "✅ Thank you! I'll get back to you soon.";
+
+          f.reset();
+        } catch {
+          s.innerHTML = "Failed to send";
+        }
+      });
 </script>
 ```
 
-&copy; Good Pastel. 2025
+&copy; Good Pastel. 2026
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
