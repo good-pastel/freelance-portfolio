@@ -256,16 +256,21 @@
           required
           placeholder="Email"
         />
-        <select class="inp" name="service">
+        <select class="inp" id="service">
           <option>Typing</option>
+
           <option>Data Entry</option>
+
           <option>Formatting</option>
         </select>
+
         <textarea
           class="inp"
-          name="message"
+          id="project"
           placeholder="Describe your project"
         ></textarea>
+
+        <textarea name="message" id="message" hidden></textarea>
         <button>Send Message</button>
       </form>
     </section>
@@ -275,18 +280,45 @@
     ></a>
     <footer>©2026 Devi Yolanda • Freelance Portfolio</footer>
     <script>
-      const f = document.getElementById("contact-form"),
-        s = document.getElementById("form-status");
+      const f = document.getElementById("contact-form");
+      const s = document.getElementById("form-status");
+
       f.addEventListener("submit", async (e) => {
         e.preventDefault();
-        s.innerHTML = "Sending...";
+
+        /* Ambil field */
+
+        const service = document.getElementById("service");
+
+        const project = document.getElementById("project");
+
+        const message = document.getElementById("message");
+
+        /* Gabungkan */
+
+        message.value = `Service : ${service.value}
+
+Project :
+
+${project.value}`;
+
+        s.innerHTML = "📨 Sending your request...";
+
         try {
-          await fetch(f.action, {
-            method: "POST",
-            body: new FormData(f),
-            mode: "no-cors",
-          });
-          s.innerHTML = "Message sent successfully!";
+          await fetch(
+            f.action,
+
+            {
+              method: "POST",
+
+              body: new FormData(f),
+
+              mode: "no-cors",
+            },
+          );
+
+          s.innerHTML = "✅ Thank you! I'll get back to you soon.";
+
           f.reset();
         } catch {
           s.innerHTML = "Failed to send";
