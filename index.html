@@ -305,6 +305,9 @@ ${project.value}`;
         s.innerHTML = "📨 Sending your request...";
 
         try {
+          console.log("SERVICE", service.value);
+          console.log("PROJECT", project.value);
+          console.log("MESSAGE", message.value);
           await fetch(
             f.action,
 
