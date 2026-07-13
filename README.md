@@ -56,14 +56,6 @@ Instead of using a traditional portfolio PDF, this website serves as an interact
 
 ---
 
-## 📂 Project Structure
-
-freelance-portfolio/
-├── index.html
-└── README.md
-
----
-
 ## 🎯 Project Goals
 
 This website was created to:
