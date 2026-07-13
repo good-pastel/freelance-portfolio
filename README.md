@@ -1,103 +1,91 @@
-# Devi Yolanda - Freelance Portfolio
+# Freelance Data Entry & Typing Portfolio
 
-> [[Freelance Portfolio](https://good-pastel.github.io/freelance-portfolio/)]
+A responsive portfolio website created to showcase freelance data entry, typing, document formatting, and administrative support services.
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+This website was built as a personal landing page where potential clients can learn about the services offered, view sample work, and contact me directly through the built-in contact form.
 
-<br />
-<div align="center">
-  <a href="https://github.com/good-pastel/good-pastel.github.io">
-    <img src="https://raw.githubusercontent.com/good-pastel/good-pastel.github.io/refs/heads/main/img/logo_trans.png" alt="Header">
-  </a>
+## 🌐 Live Demo
 
-  <h3 align="center">Welcome to Good Pastel</h3>
-
-  <p align="center">
-   <blockquote><i>"Colors fade, but pastels hold their magic forever. Let the pastels be a reflection of the beauty within your soul."</i></blockquote>
-   <br />
-    <a href="https://github.com/good-pastel?tab=repositories"><strong>Explore the other Repo»</strong></a>
-  </p>
-</div>
+https://good-pastel.github.io/freelance-portfolio/
 
 ---
 
-## Description
+## 📖 Project Overview
 
-Freelance Portfolio.
-<br/>
-<br/>
-The form on this portfolio website is connected to <b><a href="https://docs.google.com/spreadsheets/">Google Sheet Apps Script</a></b> to automate the data submission process.
-<br/>
+The purpose of this project is to provide a professional online presence for freelance clients looking for reliable data entry and typing services.
 
-```html
-<form
-        id="contact-form"
-        action="https://script.google.com/YOURID/exec"
-        method="POST"
-      >
-        <input class="inp" name="name" required placeholder="Name" />
-        <input
-          class="inp"
-          type="email"
-          name="email"
-          required
-          placeholder="Email"
-        />...
-      </form>
-```
+Instead of using a traditional portfolio PDF, this website serves as an interactive portfolio that allows visitors to:
 
-```js
-<script>
-const f = document.getElementById("contact-form");
-      const s = document.getElementById("form-status");
+- Learn about available services
+- Read the working process
+- Contact the freelancer directly
+- Access the portfolio from desktop or mobile devices
 
-      f.addEventListener("submit", async (e) => {
-        e.preventDefault();
+---
 
-        /* Ambil field */
+## ✨ Features
 
-        const service = document.getElementById("service");
+- Responsive design
+- Modern landing page
+- Service showcase
+- Portfolio section
+- Contact form
+- Smooth scrolling navigation
+- Mobile-friendly layout
 
-        const project = document.getElementById("project");
+---
 
-        const message = document.getElementById("message");
+## 💼 Services
 
-        /* Gabungkan */
+- Data Entry
+- Copy Typing
+- PDF to Word Conversion
+- PDF to Excel Conversion
+- Excel Data Cleaning
+- Spreadsheet Formatting
+- Document Formatting
 
-        message.value = `Service : ${service.value}
+---
 
-Project :
+## 🛠️ Built With
 
-${project.value}`;
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
 
-        s.innerHTML = "📨 Sending your request...";
+---
 
-        try {
-          await fetch(
-            f.action,
+## 📂 Project Structure
 
-            {
-              method: "POST",
+freelance-portfolio/
+│
+├── index.html
+└── README.md
 
-              body: new FormData(f),
+---
 
-              mode: "no-cors",
-            },
-          );
+## 🎯 Project Goals
 
-          s.innerHTML = "✅ Thank you! I'll get back to you soon.";
+This website was created to:
 
-          f.reset();
-        } catch {
-          s.innerHTML = "Failed to send";
-        }
-      });
-</script>
-```
+- Build a professional online freelance portfolio
+- Make it easier for potential clients to contact me
+- Showcase administrative and data entry skills
+- Serve as an online portfolio that can be shared with clients
 
-&copy; Good Pastel. 2026
+---
 
-<!-- MARKDOWN LINKS & IMAGES -->
+## 📱 Responsive Design
 
-[linkedin-shield]: https://img.icons8.com/arcade/64/linkedin.png
-[linkedin-url]: https://linkedin.com/in/deviyool
+The website is optimized for:
+
+- Desktop
+- Tablet
+- Mobile
+
+---
+
+## 📬 Contact
+
+If you're looking for assistance with data entry, typing, or spreadsheet management, feel free to get in touch through the contact form available on the website.
