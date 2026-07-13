@@ -12,14 +12,7 @@ https://good-pastel.github.io/freelance-portfolio/
 
 ## 📖 Project Overview
 
-The purpose of this project is to provide a professional online presence for freelance clients looking for reliable data entry and typing services.
-
-Instead of using a traditional portfolio PDF, this website serves as an interactive portfolio that allows visitors to:
-
-- Learn about available services
-- Read the working process
-- Contact the freelancer directly
-- Access the portfolio from desktop or mobile devices
+This project was created to support my freelance services in data entry and typing. Instead of relying solely on freelance marketplaces, I built a dedicated portfolio website where potential clients can easily explore my services, review my work, and contact me directly. The website is designed to provide a simple and professional experience for both desktop and mobile users.
 
 ---
 
